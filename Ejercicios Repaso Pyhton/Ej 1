@@ -1,0 +1,19 @@
+def descifrarMensaje(texto):
+   
+   # 1) Dar la vuelta al texto
+
+    texto_invertido = texto[::-1]
+
+    # 2) Guarda solo letras y espacios
+
+    mensaje_limpio = " "
+    for letra in texto_invertido:
+        if letra.isalpha() or letra == " ":
+            mensaje_limpio = mensaje_limpio + letra
+
+    return mensaje_limpio
+
+
+# Ejemplo:
+mensaje = "!!ev@al#C"
+print(descifrarMensaje(mensaje)) 

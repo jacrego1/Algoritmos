@@ -1,0 +1,30 @@
+def notas(notas):
+    if len(notas) == 0:
+        print("No hay notas.")
+        return None, None, None
+
+    # ÇCalculamos la Media
+    
+    suma = 0
+    for n in notas:
+        suma = suma + n
+    media = suma / len(notas)
+
+    # Nota más alta y más baja
+
+    nota_mas_alta = max(notas)
+    nota_mas_baja = min(notas)
+
+    # Comprobamos si hay suspensos
+
+    for n in notas:
+        if n < 5:
+            print("Hay al menos una nota suspensa.")
+            break
+
+    return media, nota_mas_alta, nota_mas_baja
+
+
+# Ejemplo:
+m, alta, baja = notas([4.5, 7, 9.2, 5, 3])
+print("Media:", m, "Máxima:", alta, "Mínima:", baja)

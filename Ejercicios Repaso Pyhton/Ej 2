@@ -1,0 +1,18 @@
+def ahorro(can_inicial, can_mensual, meses):
+    total = can_inicial
+
+    # Sumamos el dinero mes a mes
+
+    for i in range(meses):
+        total = total + can_mensual
+
+    # Mensaje si pasamos de 5000€
+
+    if total > 5000:
+        print("¡Felicidades! Has superado los 5k de ahorro.")
+
+    return total
+
+
+# Ejemplo:
+print(ahorro(1000, 200, 24))  
