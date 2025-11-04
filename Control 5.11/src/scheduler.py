@@ -6,7 +6,11 @@ from .proceso import Proceso
 GanttEntry = Tuple[str, int, int]  # (pid, t_inicio, t_fin)
 
 class Scheduler(ABC):
+    # Ponemos ABC para indicar que es una clase abstracta.
+
     @abstractmethod
+    # Usamos el abstractmethod debido a que es la funcion para hacer que todas las clases por debajo lo implementen obligatoriamente.
+    
     def planificar(self, procesos: List[Proceso]) -> List[GanttEntry]:
         raise NotImplementedError
 
@@ -52,3 +56,6 @@ class RoundRobinScheduler(Scheduler):
                 if p.tiempo_restante == 0:
                     p.tiempo_fin = fin
         return gantt
+
+## Algoritmo de FCFS y Round-Robin se verán modificados en base a lo que me pidan
+## La estructura entra seguro, clase abstracta y dos algoritmos que se pueden ver modificados

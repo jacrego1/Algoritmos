@@ -3,6 +3,7 @@ from src.repositorio import RepositorioProcesos
 import os, tempfile, pytest
 
 def test_agregar_unicidad():
+    # No puede haber 2 procesos con el mismo id
     r = RepositorioProcesos()
     r.agregar(Proceso("X", 2, 1))
     with pytest.raises(ValueError):
@@ -35,3 +36,7 @@ def test_persistencia_json_y_csv():
         r3 = RepositorioProcesos()
         r3.cargar_csv(cp)
         assert sorted([p.pid for p in r3.listar()]) == ["P1", "P2"]
+
+
+## La estructura de los test nos vale igual, se verá modificado en fucnion de los atributos
+# La estructura de los test de persistencia nos vale, se verá modificado. 

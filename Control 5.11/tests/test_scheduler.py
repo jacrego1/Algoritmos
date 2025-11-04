@@ -1,11 +1,11 @@
 from src.proceso import Proceso
 from src.scheduler import FCFSScheduler, RoundRobinScheduler
 
-def reset(procesos):
-    for p in procesos:
-        p.tiempo_restante = p.duracion
-        p.tiempo_inicio = None
-        p.tiempo_fin = None
+## def reset(procesos):
+    # for p in procesos:
+      #  p.tiempo_restante = p.duracion
+       # p.tiempo_inicio = None
+       # p.tiempo_fin = None
 
 def test_fcfs_gantt_basico():
     p1 = Proceso("P1", 3, 1)
@@ -32,3 +32,6 @@ def test_llegadas_no_simultaneas_fcfs():
     g = FCFSScheduler().planificar([p1, p2])
     assert g[0] == ("A", 1, 4)
     assert g[1] == ("B", 4, 6)
+
+## La estructura es siempre la misma para todos los test, comprobar estructura de p1 = ... // g = (llamar a la funcion)
+# assert -> resultado con el metodo y esperamos que valores coincidan. 

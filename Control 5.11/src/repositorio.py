@@ -8,6 +8,8 @@ class RepositorioProcesos:
     def __init__(self):
         self._procesos: Dict[str, Proceso] = {}
 
+# Estos metodos entran seguro, los usamos igual, se verá modificados según los atributos
+
     def agregar(self, proceso: Proceso) -> None:
         if proceso.pid in self._procesos:
             raise ValueError(f"Ya existe un proceso con pid {proceso.pid}")
@@ -32,7 +34,8 @@ class RepositorioProcesos:
     def limpiar(self) -> None:
         self._procesos.clear()
 
-    # Persistencia
+    ## Persistencia
+
     def guardar_json(self, ruta: str | Path) -> None:
         data = [p.to_dict() for p in self.listar()]
         Path(ruta).write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -56,3 +59,7 @@ class RepositorioProcesos:
             reader = csv.DictReader(f, delimiter=";")
             for row in reader:
                 self.agregar(Proceso.from_dict(row))
+
+
+
+# Los metodos de persistencia, lo mismo. Entran y se veran modificados según los atributos.

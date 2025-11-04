@@ -11,3 +11,5 @@ def test_metricas_fcfs():
     assert m["respuesta_media"] == (0 + 3) / 2
     assert m["retorno_media"]   == (3 + 5) / 2
     assert m["espera_media"]    == (0 + 3) / 2
+
+# Este test se verá modificado en base a las metricas

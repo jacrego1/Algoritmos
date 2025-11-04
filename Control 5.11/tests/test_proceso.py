@@ -13,3 +13,6 @@ def test_proceso_valido():
 def test_proceso_invalido(pid, dur, prio):
     with pytest.raises(ValueError):
         Proceso(pid, dur, prio)
+
+# Vamos a coger la misma estructura para el test de proceso.
+# EL segundo metodo de mark se va a cambiar ya que este es caracteristico del ejercicio. 

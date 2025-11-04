@@ -3,6 +3,9 @@ from dataclasses import dataclass, field
 
 @dataclass
 class Proceso:
+
+## Los atributos se pueden ver modificados, y lo que conlleve.
+
     pid: str
     duracion: int
     prioridad: int
@@ -10,6 +13,7 @@ class Proceso:
     tiempo_restante: int = field(init=False)
     tiempo_inicio: int | None = field(default=None, init=False)
     tiempo_fin: int | None = field(default=None, init=False)
+
 
     def __post_init__(self):
         if not isinstance(self.pid, str) or not self.pid.strip():
@@ -38,3 +42,5 @@ class Proceso:
             prioridad=int(d["prioridad"]),
             tiempo_llegada=int(d.get("tiempo_llegada", 0)),
         )
+
+## Modificare todas los metodos debido a los atributos al verse modificados

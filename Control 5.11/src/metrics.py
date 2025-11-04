@@ -22,3 +22,5 @@ def calcular_metricas(procesos: List[Proceso], gantt: List[GanttEntry]) -> Dict[
         "retorno_media": ret_sum / n,
         "espera_media": esp_sum / n,
     }
+
+# Se verá modificado en base a las metricas y los atributos que correspondan en el enuciado.
